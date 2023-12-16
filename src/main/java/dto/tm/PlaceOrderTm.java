@@ -9,7 +9,7 @@ import lombok.*;
 @Getter
 @Setter
 @ToString
-public class OrderTm extends RecursiveTreeObject<OrderTm> {
+public class PlaceOrderTm extends RecursiveTreeObject<PlaceOrderTm> {
     private String code;
     private String desc;
     private int qty;

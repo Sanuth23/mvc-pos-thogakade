@@ -6,10 +6,13 @@ controller/CustomerFormController.class
 model/impl/OrderDetailModelImpl.class
 dto/tm/ItemTm.class
 controller/PlaceOrderFormController.class
+controller/OrderDetailController$1.class
 model/CustomerModel.class
 dto/tm/OrderTm.class
 dto/ItemDto.class
 Main.class
+dto/tm/PlaceOrderTm.class
+controller/OrderDetailController.class
 model/OrderDetailModel.class
 controller/ItemFormController$1$1.class
 model/OrderModel.class
@@ -18,6 +21,7 @@ model/ItemModel.class
 dto/CustomerDto.class
 dto/tm/CustomerTm.class
 model/impl/CustomerModelImpl.class
+controller/OrderDetailController$1$1.class
 model/impl/OrderModelImpl.class
 db/DBConnection.class
 controller/CustomerFormController$1.class

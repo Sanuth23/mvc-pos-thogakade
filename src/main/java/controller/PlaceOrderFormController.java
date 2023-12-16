@@ -6,7 +6,7 @@ import dto.CustomerDto;
 import dto.ItemDto;
 import dto.OrderDetailDto;
 import dto.OrderDto;
-import dto.tm.OrderTm;
+import dto.tm.PlaceOrderTm;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -60,7 +60,7 @@ public class PlaceOrderFormController {
     private Label lblTotal;
 
     @FXML
-    private JFXTreeTableView<OrderTm> tblOrder;
+    private JFXTreeTableView<PlaceOrderTm> tblOrder;
 
     @FXML
     private TreeTableColumn<?, ?> colCode;
@@ -86,7 +86,7 @@ public class PlaceOrderFormController {
     private ItemModel itemModel = new ItemModelImpl();
     private OrderModel orderModel = new OrderModelImpl();
 
-    private ObservableList<OrderTm> tmList = FXCollections.observableArrayList();
+    private ObservableList<PlaceOrderTm> tmList = FXCollections.observableArrayList();
 
     public void initialize(){
         colCode.setCellValueFactory(new TreeItemPropertyValueFactory<>("code"));
@@ -183,7 +183,7 @@ public class PlaceOrderFormController {
             JFXButton btn = new JFXButton("Delete");
             btn.setStyle("-fx-background-color: #af0c0c; -fx-text-fill: white; ");
 
-            OrderTm orderTm = new OrderTm(
+            PlaceOrderTm orderTm = new PlaceOrderTm(
                     cmbCode.getValue().toString(),
                     txtDesc.getText(),
                     Integer.parseInt(txtQty.getText()),
@@ -200,7 +200,7 @@ public class PlaceOrderFormController {
 
             boolean isExist =false;
 
-            for (OrderTm order:tmList) {
+            for (PlaceOrderTm order:tmList) {
                 if (order.getCode().equals(orderTm.getCode())){
                     order.setQty(order.getQty()+orderTm.getQty());
                     order.setAmount(order.getAmount()+orderTm.getAmount());
@@ -214,7 +214,7 @@ public class PlaceOrderFormController {
                 tot += orderTm.getAmount();
             }
 
-            TreeItem<OrderTm> treeItem = new RecursiveTreeItem<OrderTm>(tmList, RecursiveTreeObject::getChildren);
+            TreeItem<PlaceOrderTm> treeItem = new RecursiveTreeItem<PlaceOrderTm>(tmList, RecursiveTreeObject::getChildren);
             tblOrder.setRoot(treeItem);
             tblOrder.setShowRoot(false);
 
@@ -230,7 +230,7 @@ public class PlaceOrderFormController {
     @FXML
     void placeOrderButtonOnAction(ActionEvent event) {
         List<OrderDetailDto> list = new ArrayList<>();
-        for (OrderTm tm:tmList) {
+        for (PlaceOrderTm tm:tmList) {
             list.add(new OrderDetailDto(
                     lblOrderId.getText(),
                     tm.getCode(),

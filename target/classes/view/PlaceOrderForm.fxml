@@ -63,9 +63,9 @@
             <TreeTableColumn fx:id="colOption" prefWidth="127.0" text="Option" />
          </columns>
       </JFXTreeTableView>
-      <Label fx:id="lblOrderId" layoutX="683.0" layoutY="24.0" prefHeight="26.0" prefWidth="116.0">
+      <Label fx:id="lblOrderId" layoutX="653.0" layoutY="37.0" prefHeight="32.0" prefWidth="129.0">
          <font>
-            <Font name="System Bold" size="14.0" />
+            <Font name="Arial Bold" size="15.0" />
          </font>
       </Label>
    </children>

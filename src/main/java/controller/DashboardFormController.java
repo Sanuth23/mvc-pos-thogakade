@@ -67,7 +67,15 @@ public class DashboardFormController {
     }
 
     public void detailsButtonOnAction(ActionEvent actionEvent) {
-
+        Stage stage = (Stage) pane.getScene().getWindow();
+        try {
+            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/OrderDetailForm.fxml"))));
+            stage.setTitle("Order Detail Form");
+            stage.show();
+            stage.setResizable(false);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void placeOrderButtonOnAction(ActionEvent actionEvent) {
