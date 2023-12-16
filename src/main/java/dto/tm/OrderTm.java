@@ -1,6 +1,7 @@
 package dto.tm;
 
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.datamodels.treetable.RecursiveTreeObject;
 import lombok.*;
 
 @AllArgsConstructor
@@ -8,7 +9,7 @@ import lombok.*;
 @Getter
 @Setter
 @ToString
-public class OrderTm {
+public class OrderTm extends RecursiveTreeObject<OrderTm> {
     private String code;
     private String desc;
     private int qty;

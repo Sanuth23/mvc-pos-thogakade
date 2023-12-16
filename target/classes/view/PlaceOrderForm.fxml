@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXComboBox?>
-<?import com.jfoenix.controls.JFXTextField?>
-<?import com.jfoenix.controls.JFXTreeTableView?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TreeTableColumn?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="orderPane" prefHeight="553.0" prefWidth="782.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PlaceOrderFormController">
+<AnchorPane fx:id="orderPane" prefHeight="553.0" prefWidth="782.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PlaceOrderFormController">
    <children>
+      <ImageView fitHeight="575.0" fitWidth="869.0" layoutX="-1.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 20%;">
+         <image>
+            <Image url="@../img/imgGroceryStore.jpg" />
+         </image>
+      </ImageView>
       <Label layoutX="58.0" layoutY="31.0" prefHeight="22.0" prefWidth="71.0" text="Customer ID" />
       <JFXComboBox fx:id="cmbCustId" layoutX="58.0" layoutY="46.0" prefHeight="32.0" prefWidth="129.0" />
       <Label layoutX="58.0" layoutY="109.0" prefHeight="22.0" prefWidth="71.0" text="Item Code" />
       <JFXComboBox fx:id="cmbCode" layoutX="58.0" layoutY="124.0" prefHeight="32.0" prefWidth="129.0" />
-      <Label layoutX="213.0" layoutY="28.0" prefHeight="22.0" prefWidth="71.0" text="Name" />
-      <JFXTextField fx:id="txtCustName" layoutX="213.0" layoutY="50.0" prefHeight="27.0" prefWidth="190.0" />
-      <Label layoutX="213.0" layoutY="107.0" prefHeight="22.0" prefWidth="71.0" text="Description" />
-      <JFXTextField fx:id="txtDesc" layoutX="213.0" layoutY="129.0" prefHeight="27.0" prefWidth="190.0" />
-      <Label layoutX="429.0" layoutY="107.0" prefHeight="22.0" prefWidth="71.0" text="Unit Price" />
-      <JFXTextField fx:id="txtUnitPrice" layoutX="429.0" layoutY="129.0" prefHeight="27.0" prefWidth="140.0" />
-      <Label layoutX="593.0" layoutY="107.0" prefHeight="22.0" prefWidth="71.0" text="Buying Qty" />
-      <JFXTextField fx:id="txtQty" layoutX="594.0" layoutY="129.0" prefHeight="27.0" prefWidth="71.0" />
+      <Label layoutX="215.0" layoutY="28.0" prefHeight="22.0" prefWidth="71.0" text="Name" />
+      <JFXTextField fx:id="txtCustName" layoutX="215.0" layoutY="50.0" prefHeight="27.0" prefWidth="211.0" />
+      <Label layoutX="215.0" layoutY="107.0" prefHeight="22.0" prefWidth="71.0" text="Description" />
+      <JFXTextField fx:id="txtDesc" layoutX="215.0" layoutY="129.0" prefHeight="27.0" prefWidth="211.0" />
+      <Label layoutX="457.0" layoutY="107.0" prefHeight="22.0" prefWidth="71.0" text="Unit Price" />
+      <JFXTextField fx:id="txtUnitPrice" layoutX="457.0" layoutY="129.0" prefHeight="27.0" prefWidth="158.0" />
+      <Label layoutX="646.0" layoutY="107.0" prefHeight="22.0" prefWidth="71.0" text="Buying Qty" />
+      <JFXTextField fx:id="txtQty" layoutX="649.0" layoutY="129.0" prefHeight="27.0" prefWidth="114.0" />
       <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="6.0" layoutY="7.0" onAction="#backButtonOnAction" prefHeight="32.0" prefWidth="38.0">
          <graphic>
             <ImageView fitHeight="28.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
@@ -34,27 +34,27 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton layoutX="637.0" layoutY="171.0" onAction="#addToCartButtonOnAction" prefHeight="32.0" prefWidth="122.0" style="-fx-background-color: E48F45; -fx-background-radius: 8;" text="Add To Cart" textFill="WHITE">
+      <JFXButton layoutX="681.0" layoutY="171.0" onAction="#addToCartButtonOnAction" prefHeight="32.0" prefWidth="122.0" style="-fx-background-color: #C92C6D; -fx-background-radius: 8;" text="Add To Cart" textFill="WHITE">
          <font>
             <Font name="Arial Bold" size="15.0" />
          </font>
       </JFXButton>
-      <JFXButton layoutX="637.0" layoutY="506.0" onAction="#placeOrderButtonOnAction" prefHeight="38.0" prefWidth="122.0" style="-fx-background-color: FF8F8F; -fx-background-radius: 10;" text="Place Order" textFill="WHITE">
+      <JFXButton layoutX="681.0" layoutY="506.0" onAction="#placeOrderButtonOnAction" prefHeight="38.0" prefWidth="122.0" style="-fx-background-color: #5D9C59; -fx-background-radius: 10;" text="Place Order" textFill="#fffdff">
          <font>
             <Font name="Arial Bold" size="15.0" />
          </font>
       </JFXButton>
-      <Label layoutX="23.0" layoutY="516.0" prefHeight="22.0" prefWidth="59.0" text="Total   :">
+      <Label layoutX="58.0" layoutY="514.0" prefHeight="22.0" prefWidth="59.0" text="Total   :">
          <font>
             <Font name="Arial Bold" size="14.0" />
          </font>
       </Label>
-      <Label fx:id="lblTotal" layoutX="82.0" layoutY="516.0" prefHeight="22.0" prefWidth="59.0" text="0.00">
+      <Label fx:id="lblTotal" layoutX="117.0" layoutY="514.0" prefHeight="22.0" prefWidth="59.0" text="0.00">
          <font>
             <Font name="Arial Bold" size="14.0" />
          </font>
       </Label>
-      <JFXTreeTableView fx:id="tblItem" layoutX="20.0" layoutY="216.0" prefHeight="280.0" prefWidth="738.0">
+      <JFXTreeTableView fx:id="tblOrder" layoutX="53.0" layoutY="214.0" prefHeight="280.0" prefWidth="750.0" style="-fx-opacity: 80%; -fx-fixed-cell-size: 50px;">
          <columns>
             <TreeTableColumn fx:id="colCode" prefWidth="104.0" text="Code" />
             <TreeTableColumn fx:id="colDesc" prefWidth="240.0" text="Description" />
@@ -63,6 +63,10 @@
             <TreeTableColumn fx:id="colOption" prefWidth="127.0" text="Option" />
          </columns>
       </JFXTreeTableView>
-
+      <Label fx:id="lblOrderId" layoutX="683.0" layoutY="24.0" prefHeight="26.0" prefWidth="116.0">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
