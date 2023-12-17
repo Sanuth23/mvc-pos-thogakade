@@ -91,15 +91,19 @@ public class OrderDetailController {
         colCustId.setCellValueFactory(new TreeItemPropertyValueFactory<>("custId"));
         colCustName.setCellValueFactory(new TreeItemPropertyValueFactory<>("custName"));
         colOption.setCellValueFactory(new TreeItemPropertyValueFactory<>("btn"));
+
+        colCode.setCellValueFactory(new TreeItemPropertyValueFactory<>("code"));
+        colDesc.setCellValueFactory(new TreeItemPropertyValueFactory<>("desc"));
+        colQty.setCellValueFactory(new TreeItemPropertyValueFactory<>("qty"));
+        colAmount.setCellValueFactory(new TreeItemPropertyValueFactory<>("amount"));
+        colPlaceOption.setCellValueFactory(new TreeItemPropertyValueFactory<>("btn"));
+
         loadOrderTable();
 
         tblOrder.getSelectionModel().selectedItemProperty().addListener((observableValue, oldValue, newValue) -> {
-            colCode.setCellValueFactory(new TreeItemPropertyValueFactory<>("code"));
-            colDesc.setCellValueFactory(new TreeItemPropertyValueFactory<>("desc"));
-            colQty.setCellValueFactory(new TreeItemPropertyValueFactory<>("qty"));
-            colAmount.setCellValueFactory(new TreeItemPropertyValueFactory<>("amount"));
-            colPlaceOption.setCellValueFactory(new TreeItemPropertyValueFactory<>("btn"));
-            loadPlaceOrderTable(newValue);
+            if (newValue!=null){
+                loadPlaceOrderTable(newValue);
+            }
         });
 
         txtSearch.textProperty().addListener(new ChangeListener<String>() {
